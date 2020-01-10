@@ -81,31 +81,31 @@ namespace sasd
                     screen.Back();
                     break;
             }
-
-            SendMessageString(gamePlayControlEnum.ToString(), "GamePlayControlEnum");
+            if (management.GetCurrentScreen() is GameScreen)
+            {
+                SendMessageString(gamePlayControlEnum.ToString(), "GamePlayControlEnum");
+            }
         }
 
         public void SendMessageString(string messageString, string objectType){
-            NetworkStream networkStream = network.GetNetworkStream();
-            if (networkStream == null) {
+            if (network == null) {
                 Console.WriteLine("Network connection not established!");
                 return;
             }
             String taggedString = "<" + objectType + ">" + messageString + "</" + objectType + ">";
             byte[] byteArray = Encoding.ASCII.GetBytes(taggedString);
-            networkStream.Write(byteArray, 0, byteArray.Length);
+            network.GetNetworkStream().Write(byteArray, 0, byteArray.Length);
         }
 
 		public void ProcessReceivedString(GamePlayControlEnum incomingEnum, Screen screen) {
-            NetworkStream networkStream = network.GetNetworkStream();
-            if (networkStream == null)
+            if (network == null)
             {
                 Console.WriteLine("Network connection not established!");
             }
             else
             {
                 byte[] bytes = new byte[1024];
-                int bytesRead = networkStream.Read(bytes, 0, bytes.Length);
+                int bytesRead = network.GetNetworkStream().Read(bytes, 0, bytes.Length);
                 string receivedString = Encoding.ASCII.GetString(bytes, 0, bytesRead);
                 incomingEnum = parseGPEnumFromString(receivedString);
                 //TODO enum kann nun benutzt werden für gegnerbalken!!
