@@ -43,8 +43,8 @@ namespace sasd
 
         public void setDim(int inXDim,int inYDim)
         {
-            dim[0] = inXDim;
-            dim[1] = inYDim;
+			int[] rDim = new int[2]{ inXDim, inYDim };
+			dim = rDim;
         }
         //TODO diese Methode wird im MainLoop aufgerufen und aktualisiert den Screen, siehe Management.cs:24
         public override void Redraw()

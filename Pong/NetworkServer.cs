@@ -13,7 +13,7 @@ namespace sasd
     class NetworkServer : Network
     {
         public NetworkServer(int port) {
-            TcpListener tcpListener = TcpListener.Create(port);
+			TcpListener tcpListener = new TcpListener(port);
             tcpListener.Start();
             Console.WriteLine("Waiting for opponent...");
             SetTcpClient(tcpListener.AcceptTcpClient());

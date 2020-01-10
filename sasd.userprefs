@@ -1,6 +1,10 @@
-﻿<Properties StartupItem="sasd/sasd.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench />
+﻿<Properties StartupItem="Pong/Pong.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pong/NetworkServer.cs">
+    <Files>
+      <File FileName="Pong/NetworkServer.cs" Line="16" Column="51" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
