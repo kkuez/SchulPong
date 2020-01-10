@@ -11,8 +11,8 @@ namespace sasd
         int [] dim;
         private IO io;
 
-        Player1 p1 = new Player1();
-        Player2 p2 = new Player2();
+		GameObject p1 = new Player1();
+		GameObject p2 = new Player2();
 
         Ball ball = new Ball();
         
@@ -27,6 +27,10 @@ namespace sasd
 			p2.SetXPos(30);
 			p2.SetYPos(1);
 			setDim (31, 25);
+			p1.setId("1");
+			p1.SetSprite("|\n|\n|\n|\n|");
+			p2.setId("2");
+			p2.SetSprite("|\n\t\t|\n\t\t|\n\t\t|\n\t\t|");
         }
         
 
@@ -105,9 +109,13 @@ namespace sasd
         }
 
         public void ballroutine()
-        {
-            
-            ball.move();
+        {	
+			if (ball.GetXPos () == p1.GetXPos() || ball.GetXPos () == p2.GetXPos())
+				ball.checkPadelCol (p1.GetYPos(), p2.GetYPos());
+			
+			int dimX = getDim()[0];
+			int dimY = getDim()[1];
+			ball.move(dimY);
         }
         
     }

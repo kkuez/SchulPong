@@ -13,43 +13,46 @@ namespace sasd
         {
             SetSprite("o");
         }
-            public void move()
-            {
-                switch (CurDirection)
-                {
-                    case 0:                                         //NW
-                        SetXPos(GetXPos() - 1);                 
-                        SetYPos(GetYPos() - 1);                 
-                        break;                                   
-                    case 1:                                         //N
-                        SetYPos(GetYPos() - 1);
-                        break;
-                    case 2:                                         //NE
-                        SetXPos(GetXPos() + 1);                     
-                        SetYPos(GetYPos() - 1);
-                        break;
-                    case 3:                                         //E
-                        SetXPos(GetXPos() + 1);
-                        break;
-                    case 4:                                         //SE
-                        SetXPos(GetXPos() + 1);
-                        SetYPos(GetYPos() + 1);
-                        break;
-                    case 5:                                         //S
-                        SetYPos(GetYPos() + 1);
-                        break;
-                    case 6:                                         //SW
-                        SetXPos(GetXPos() - 1);
-                        SetYPos(GetYPos() + 1);
-                        break;
-                    case 7:                                         //W
-                        SetXPos(GetXPos() - 1);
-                        break;
-                    default: 
-                        break;
-                }
-            }
-            public void bounceWall()
+		public void move(int dimY)
+		{
+			if (GetYPos () == 1 || GetYPos() == dimY)
+				bounceWall ();
+			else {
+				switch (CurDirection) {
+				case 0:                                         //NW
+					SetXPos (GetXPos () - 1);                 
+					SetYPos (GetYPos () - 1);                 
+					break;                                   
+				case 1:                                         //N
+					SetYPos (GetYPos () - 1);
+					break;
+				case 2:                                         //NE
+					SetXPos (GetXPos () + 1);                     
+					SetYPos (GetYPos () - 1);
+					break;
+				case 3:                                         //E
+					SetXPos (GetXPos () + 1);
+					break;
+				case 4:                                         //SE
+					SetXPos (GetXPos () + 1);
+					SetYPos (GetYPos () + 1);
+					break;
+				case 5:                                         //S
+					SetYPos (GetYPos () + 1);
+					break;
+				case 6:                                         //SW
+					SetXPos (GetXPos () - 1);
+					SetYPos (GetYPos () + 1);
+					break;
+				case 7:                                         //W
+					SetXPos (GetXPos () - 1);
+					break;
+				default: 
+					break;
+				}
+			}
+		}
+       	public void bounceWall()
             {
                 switch(CurDirection)
                 {
@@ -82,7 +85,7 @@ namespace sasd
              
                 }
             }
-            public void bouncePadel()
+     	public void bouncePadel()
             {
                 switch (CurDirection)
                 {
@@ -119,12 +122,17 @@ namespace sasd
             {
                 if (GetXPos() == 0)
                 {
-                    if (GetYPos() >= p1Y && GetYPos() <= p1Y + 3)
+                if (GetYPos() >= p1Y && GetYPos() <= p1Y + 3)
                     {
                         bouncePadel();
                     }
+				else
+				{
+					SetXPos(15);
+					SetYPos (15);
                 }
             }
 
     }
+}
 }

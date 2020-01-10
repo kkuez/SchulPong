@@ -33,7 +33,7 @@ namespace sasd
                 {
                     ConsoleKeyInfo pressedkey = Console.ReadKey();
                     GamePlayControlEnum gamePlayControlEnum = io.GetControlEnum(pressedkey);
-                    GamePlayControlEnum gamePlayCOntrolEnum2;
+					GamePlayControlEnum gamePlayCOntrolEnum2  = GamePlayControlEnum.NOCONTROLKEY;
                     io.ProcessControl(gamePlayControlEnum, currentScreen);
 					io.ProcessReceivedString(gamePlayCOntrolEnum2, currentScreen);
                    

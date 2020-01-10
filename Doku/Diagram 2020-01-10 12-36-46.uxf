@@ -1,0 +1,87 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>60</x><y>70</y><w>340</w><h>110</h></coordinates><panel_attributes>Management
+--
+- io: IO
+- currentScreen: Screen
+- exit: Boolean
+--
+- loop(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>310</y><w>340</w><h>220</h></coordinates><panel_attributes>IO
+--
+- management: Management
+- controlKeySet: HashSet&lt;ConsoleKey&gt;
+- tcpClient: TcpClient
+- ns: NetworkStream
+--
++ GetControlEnum(consoleKeyInfo: ConsoleKeyInfo ): GamePlayControlEnum
++ ProcessControl(gamePlayControlEnum: GamePlayControlEnum, screen: Screen): void
++ SendMessageString(messageString: string, objectType: string ): void
++ ProcessReceivedString(): void
++ ActAsClient(ip: string, port: Int32): void
++ ActAsServer(port: Int32): void
++ CloseConnection(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>60</x><y>210</y><w>340</w><h>70</h></coordinates><panel_attributes>Program
+--
++ Main(args: String): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>510</x><y>30</y><w>180</w><h>160</h></coordinates><panel_attributes>/Screen/
+--
+- screenList: List&lt;String&gt;
+- management: Management
+--
++ Ask(question: String): String
++ Submit(): String
++ Up(): void
++ Down(): void
++ Back(): void
++ Redraw(): void
++ Submit2():String
++ Down2():void
++ Up2():void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>730</x><y>30</y><w>300</w><h>390</h></coordinates><panel_attributes>/MenuScreen: Screen/
+--
+- lineList: List&lt;MenuLine&gt;
+- io: IO
+--
++ Submit(): String
++ Up(): void
++ Down(): void
++ Back(): void
++ Redraw(): void
++ GetMarkedLine(): MenuLine
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1080</x><y>150</y><w>310</w><h>180</h></coordinates><panel_attributes>GeneralScreen: MenuScreen
+--
++ Submit(): String
++ Back(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1080</x><y>400</y><w>260</w><h>200</h></coordinates><panel_attributes>MenuLine
+--
+- content: String
+- callBack: String
+- isMarked: Boolean
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>90</x><y>610</y><w>300</w><h>390</h></coordinates><panel_attributes>/GameObject/
+--
+- int xPos
+- int yPos
+- String sprite
+- String inId
+. String id
+--
++ serialize(): String
++ deserialize(String sString): void
++ moveD(): void
++ moveU(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>450</x><y>610</y><w>300</w><h>390</h></coordinates><panel_attributes>/Ball:GameObject/
+--
+- int CurDirection()
+--
++ move(dimY:int): void
++ bounceWall(): void
++ bouncePadel():void
++checkPadelCol(p1Y:int,p2Y:int): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>760</x><y>440</y><w>300</w><h>390</h></coordinates><panel_attributes>/GameScreen:Screen/
+--
+- int[]: dim
+- io:IO
+--
++ Up(): void
++ Down():void
++ Back():void
++ Submit2():String
++ Down2():void
++ Up2():void
++ ballroutine():void
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
