@@ -10,7 +10,7 @@ namespace sasd
     {
         protected TcpClient tcpClient { get; set; }
 
-        NetworkStream networkStream { get; set; }
+        protected NetworkStream networkStream { get; set; }
 
         public TcpClient GetTcpClient() {
             return tcpClient;
