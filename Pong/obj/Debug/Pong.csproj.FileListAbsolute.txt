@@ -1,0 +1,2 @@
+D:\Downloads\SchulPong-Remaster\SchulPong-Remaster\Pong\obj\Debug\Pong.csprojAssemblyReference.cache
+D:\Downloads\SchulPong-Remaster\SchulPong-Remaster\Pong\obj\Debug\Pong.csproj.CoreCompileInputs.cache

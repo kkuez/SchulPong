@@ -1,0 +1,3 @@
+/home/tobias/Dokumente/Schule/SchulPong/sasd/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/tobias/Dokumente/Schule/SchulPong/sasd/obj/x86/Debug/sasd.exe
+/home/tobias/Dokumente/Schule/SchulPong/sasd/obj/x86/Debug/sasd.pdb

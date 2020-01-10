@@ -1,0 +1,53 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>20</x><y>20</y><w>340</w><h>110</h></coordinates><panel_attributes>Management
+--
+- io: IO
+- currentScreen: Screen
+- exit: Boolean
+--
+- loop(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>20</x><y>260</y><w>340</w><h>220</h></coordinates><panel_attributes>IO
+--
+- management: Management
+- controlKeySet: HashSet&lt;ConsoleKey&gt;
+- tcpClient: TcpClient
+- ns: NetworkStream
+--
++ GetControlEnum(consoleKeyInfo: ConsoleKeyInfo ): GamePlayControlEnum
++ ProcessControl(gamePlayControlEnum: GamePlayControlEnum, screen: Screen): void
++ SendMessageString(messageString: string, objectType: string ): void
++ ProcessReceivedString(): void
++ ActAsClient(ip: string, port: Int32): void
++ ActAsServer(port: Int32): void
++ CloseConnection(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>20</x><y>160</y><w>340</w><h>70</h></coordinates><panel_attributes>Program
+--
++ Main(args: String): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>470</x><y>20</y><w>180</w><h>160</h></coordinates><panel_attributes>/Screen/
+--
+- screenList: List&lt;String&gt;
+- management: Management
+--
++ Ask(question: String): String
++ Submit(): String
++ Up(): void
++ Down(): void
++ Back(): void
++ Redraw(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>670</x><y>30</y><w>300</w><h>390</h></coordinates><panel_attributes>/MenuScreen: Screen/
+--
+- lineList: List&lt;MenuLine&gt;
+- io: IO
+--
++ Submit(): String
++ Up(): void
++ Down(): void
++ Back(): void
++ Redraw(): void
++ GetMarkedLine(): MenuLine
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1040</x><y>100</y><w>310</w><h>180</h></coordinates><panel_attributes>GeneralScreen: MenuScreen
+--
++ Submit(): String
++ Back(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>670</x><y>560</y><w>260</w><h>200</h></coordinates><panel_attributes>MenuLine
+--
+- content: String
+- callBack: String
+- isMarked: Boolean
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
