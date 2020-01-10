@@ -2,8 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sasd", "sasd\sasd.csproj", "{6C691AA3-A934-4688-BCFA-79ACB82E4A51}"
-EndProject
+
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pong", "Pong\Pong.csproj", "{5DB12712-F61D-4E82-AFC8-85699ADA3F6D}"
 EndProject
 Global

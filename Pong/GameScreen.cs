@@ -11,8 +11,8 @@ namespace sasd
         int [] dim;
         private IO io;
 
-		GameObject p1 = new Player1();
-		GameObject p2 = new Player2();
+		GameObject p1 = new GameObject();
+		GameObject p2 = new GameObject();
 
         Ball ball = new Ball();
         
